@@ -15,10 +15,12 @@ export default function Taches({taches, setTaches, utilisateur, gererAjoutTache}
 
   // Soumettre formulaire
   function gererSoumettre(event){
-    gererAjoutTache(texte);
-    // setTexte('');
+    if(texte != ""){
+      gererAjoutTache(texte);
+      setTexte('');
+      event.target[0].value = '';
+    }
     event.preventDefault();
-    event.target[0].value = '';
   }
 
   return (
